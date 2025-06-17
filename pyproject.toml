@@ -1,0 +1,12 @@
+[project]
+name = "wisllm"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.3.25",
+    "langchain-community>=0.3.25",
+    "python-dotenv>=1.1.0",
+    "vllm>=0.9.1",
+]
