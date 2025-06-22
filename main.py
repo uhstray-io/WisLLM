@@ -19,7 +19,7 @@ if "REASONING_LLM" not in os.environ:
         prompt="Enter your reasoning LLM path (required): (default = "") "
     )
     if not os.environ.get("REASONING_LLM"):
-        os.environ["REASONING_LLM"] = "nvidia/Nemotron-H-8B-Reasoning-128K"
+        os.environ["REASONING_LLM"] = "HF1BitLLM/Llama3-8B-1.58-100B-tokens"
         
 # if "PREPROCESSING_LLM" not in os.environ:
 #     os.environ["PREPROCESSING_LLM"] = getpass.getpass(
@@ -36,7 +36,7 @@ if "REASONING_LLM" not in os.environ:
 #         os.environ["CODING_LLM"] = "nvidia/AceReason-Nemotron-1.1-7B"
     
 reasoning_llm = VLLM(
-    model="nvidia/Nemotron-H-8B-Reasoning-128K",
+    model="REASONING_LLM",
     trust_remote_code=True,
     # tensor_parallel_size=3,
 )

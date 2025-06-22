@@ -1,4 +1,5 @@
 # WisLLM
+
 LLM Agentic Developer and Orchestrator for business-as-code platforms, services, and data.
 
 ### MVP Goals
@@ -7,9 +8,13 @@ LLM Agentic Developer and Orchestrator for business-as-code platforms, services,
 - Copilot instructons for each LLM/Agent should be generated from the requirements.
 - Write the initial stories necesary to implement the project.
 - Develop a plan and priorities to tackle the project in an agile manner.
+- Scrum Master LLM should be able to delegate tasks to the appropriate agents.
+- Each LLM developer should focus on their specific expertise and delivery only on the next iterative task
 
 ### Design Philosophy
 
+- **Locally Capable**: Each agent and LLM should be capable of running on local computers.
+- **Energy Efficiency**: The system should be designed to minimize energy consumption, allowing for efficient operation on local hardware.
 - **Feedback Required**: Every agent should demand and require feedback from one another or the user.
 - **Agentic**: Agents should be able to operate independently, but also collaborate when necessary.
 - **Collaborative**: Agents should be able to work together to achieve a common goal.
@@ -68,11 +73,10 @@ flowchart TD
     Dev --> Int
     Ops --> Int
 ```
-  
 
 ### TODO
-- [ ] Update Data Team Roles (Data Scientist, Data Architect, Data Warehousing)
 
+- [ ] Update Data Team Roles (Data Scientist, Data Architect, Data Warehousing)
 
 ## Getting Started
 
@@ -80,7 +84,6 @@ flowchart TD
 uv venv --python 3.12 --seed
 source .venv/bin/activate
 ```
-
 
 %pip install --upgrade --quiet  vllm -q
 
