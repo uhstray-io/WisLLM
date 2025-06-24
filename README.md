@@ -1,6 +1,6 @@
 # WisLLM
 
-LLM Agentic Developer and Orchestrator for business-as-code platforms, services, and data.
+LLM Agentic Development Team, designed to support business-as-code platforms, services, and data.
 
 ### MVP Goals
 
@@ -89,3 +89,33 @@ source .venv/bin/activate
 
 
 nanonets/Nanonets-OCR-s
+
+### Notes
+
+API: http://localhost:2024
+
+Docs: http://localhost:2024/docs
+
+LangGraph Studio Web UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+
+https://github.com/langchain-ai/langgraph-studio
+
+https://langchain-ai.github.io/langgraph/cloud/how-tos/studio/quick_start/
+
+https://github.com/langchain-ai/langgraph
+
+https://langchain-ai.github.io/langgraph/cloud/deployment/setup_pyproject/#specify-dependencies
+
+https://langchain-ai.github.io/langgraph/reference/supervisor/
+
+https://langchain-ai.github.io/langgraph/reference/agents/
+
+https://langchain-ai.github.io/langgraph/reference/graphs/
+
+https://langchain-ai.github.io/langgraph/cloud/reference/cli/
+
+https://langchain-ai.github.io/langgraph/cloud/deployment/setup_pyproject/#specify-environment-variables
+
+https://docs.smith.langchain.com/
+
+https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_agentic_rag/

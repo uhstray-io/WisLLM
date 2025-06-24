@@ -19,7 +19,7 @@ if "REASONING_LLM" not in os.environ:
         prompt="Enter your reasoning LLM path (required): (default = "") "
     )
     if not os.environ.get("REASONING_LLM"):
-        os.environ["REASONING_LLM"] = "HF1BitLLM/Llama3-8B-1.58-100B-tokens"
+        os.environ["REASONING_LLM"] = "HF1BitLLM/Llama3-8B-1.58-100B"
         
 # if "PREPROCESSING_LLM" not in os.environ:
 #     os.environ["PREPROCESSING_LLM"] = getpass.getpass(
