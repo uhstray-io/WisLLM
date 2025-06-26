@@ -38,7 +38,13 @@ if "REASONING_LLM" not in os.environ:
 reasoning_llm = VLLM(
     model="REASONING_LLM",
     trust_remote_code=True,
-    # tensor_parallel_size=3,
+    tensor_parallel_size=3,
+    vllm_kwargs={
+        "gpu_memory_utilization": 0.9,
+        "quantization": "bitblas",  # Enable BitBLAS quantization
+        "max_model_len": 4096,
+    }
+    
 )
 
 # preprocessing_llm = VLLM(

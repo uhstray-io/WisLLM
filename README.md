@@ -38,7 +38,7 @@ flowchart TD
     end
 
     subgraph Collab[Collaboration Protocols]
-        A2A[Agent to Agent Protocol]
+        LangChain[LangChain State Management]
     end
 
     subgraph Dev[Developer LLMs]
@@ -54,7 +54,7 @@ flowchart TD
     end
 
     subgraph Int[Interface Protocols]
-        MCP[Model Context Protocol]
+        WisLLM[WisLLM API]
     end
 
     User <--> Scrum
@@ -74,15 +74,59 @@ flowchart TD
     Ops --> Int
 ```
 
+### Folder Structure
+
+```plaintext
+WisLLM/
+├── pyproject.toml                    # Root workspace configuration
+├── shared/                           # Shared libraries
+│   ├── pyproject.toml
+│   └── shared/
+│       ├── state/                    # State management
+│       │   ├── schemas.py           # Pydantic schemas
+│       │   ├── store.py             # State store interface
+│       │   └── sync.py              # Synchronization
+│       ├── tools/                    # Common tools
+│       ├── agents/                   # Base agent classes
+│       │   └── base_agent.py
+│       └── comms/                    # Inter-agent communication
+│           └── handoffs.py
+│
+├── agents/                           # Individual agents
+│   ├── supervisor/
+│   │   ├── pyproject.toml
+│   │   ├── langgraph.json
+│   │   └── supervisor_agent/
+│   │       ├── graph.py
+│   │       ├── nodes.py
+│   │       └── prompts.py
+│   ├── research_agent/
+│   ├── data_analyst/
+│   ├── content_creator/
+│   ├── code_reviewer/
+│   ├── qa_agent/
+│   ├── security_agent/
+│   ├── performance_agent/
+│   ├── integration_agent/
+│   └── notification_agent/
+│
+└── infrastructure/
+    ├── docker/
+    └── kubernetes/
+
 ### TODO
 
 - [ ] Update Data Team Roles (Data Scientist, Data Architect, Data Warehousing)
+- [ ] Fix Folder Structure
+- [ ] Add LangGraph Studio integration
+- [ ] Create LangGraph for Supervisor Agent
+- [ ] Debug Dockerfile and Docker Compose
 
 ## Getting Started
 
 ```python
-uv venv --python 3.12 --seed
-source .venv/bin/activate
+uv sync
+uv run main.py
 ```
 
 %pip install --upgrade --quiet  vllm -q
