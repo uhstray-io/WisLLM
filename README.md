@@ -41,16 +41,16 @@ flowchart TD
         LangChain[LangChain State Management]
     end
 
-    subgraph Dev[Developer LLMs]
-        UXUI[UX/UI Dev]
-        Backend[Backend Developer]
+    subgraph Dev[Software Development LLMs]
+        UXUI[UX/UI Engineer]
+        Backend[Backend Engineer]
         Data[Data Engineer]
     end
 
     subgraph Ops[Operations LLMs]
-        DevSecOps[DevSecOps Developer]
-        Infrastructure[Infrastructure Automator]
-        Reporter[Reporting Operator]
+        DevSecOps[DevSecOps Engineer]
+        Infrastructure[Automation Engineer]
+        Reporter[Reporting Analyst]
     end
 
     subgraph Int[Interface Protocols]
@@ -59,11 +59,13 @@ flowchart TD
 
     User <--> Scrum
     User <--> Architect
+    User <--> DataScientist
 
     Architect <--> Scrum
     Architect <--> DataScientist
     
     Architect <--> Researcher
+    DataScientist <--> Scrum
     DataScientist <--> Researcher
 
     Design <--> Collab
@@ -78,37 +80,42 @@ flowchart TD
 
 ```plaintext
 WisLLM/
-├── pyproject.toml                    # Root workspace configuration
-├── shared/                           # Shared libraries
-│   ├── pyproject.toml
-│   └── shared/
-│       ├── state/                    # State management
-│       │   ├── schemas.py           # Pydantic schemas
-│       │   ├── store.py             # State store interface
-│       │   └── sync.py              # Synchronization
-│       ├── tools/                    # Common tools
-│       ├── agents/                   # Base agent classes
+├── pyproject.toml                     # Root workspace configuration
+├── scripts/
+│   ├── build.sh                       # Build script for the project
+│   ├── deploy.sh                      # Deployment script
+│   └── run-local.sh                   # Run script for the project
+├── src/      
+│   ├── __init__.py                    # Package initialization
+│   ├── main.py
+│   ├── agents/                        # Main entry point for the applicatio
+│   |   ├── scrum_master/              # Scrum Master Agent
+│   |   │   ├── langgraph.json
+│   |   |   ├── graph.py
+│   |   |   ├── nodes.py
+│   |   |   └── prompts.py
+│   |   ├── researcher/                # Requirements Researcher Agent
+│   |   ├── data_engineer/             # Data Engineer Agent
+│   |   ├── data_scientist/            # Data Scientist Agent
+│   |   ├── uiux_engineer/             # UX/UI Engineer Agent
+│   |   ├── devsecops_engineer/        # DevSecOps Engineer Agent
+│   |   ├── automation_engineer/       # Automation Engineer Agent
+│   |   ├── architect/                 # Solutions Architect Agent
+│   |   ├── report_analyst/
+│   |   └── notification_agent/
+│   └── shared/                        # Shared libraries for all agents
+│       ├── state/                     # State management
+│       │   ├── schemas.py             # Pydantic schemas
+│       │   ├── store.py               # State store interface
+│       │   └── sync.py                # Synchronization
+│       ├── tools/                     # Common tools used by the agent
+│       │   ├── cli/                   # Command-line interface tools
+│       │   ├── chat/                  # Chat interface
+│       │   └── networking/            # Network interface (services/integration?)
+│       ├── agents/                    # Base agent classes
 │       │   └── base_agent.py
-│       └── comms/                    # Inter-agent communication
+│       └── comms/                     # Inter-agent communication
 │           └── handoffs.py
-│
-├── agents/                           # Individual agents
-│   ├── supervisor/
-│   │   ├── pyproject.toml
-│   │   ├── langgraph.json
-│   │   └── supervisor_agent/
-│   │       ├── graph.py
-│   │       ├── nodes.py
-│   │       └── prompts.py
-│   ├── research_agent/
-│   ├── data_analyst/
-│   ├── content_creator/
-│   ├── code_reviewer/
-│   ├── qa_agent/
-│   ├── security_agent/
-│   ├── performance_agent/
-│   ├── integration_agent/
-│   └── notification_agent/
 │
 └── infrastructure/
     ├── docker/
@@ -118,9 +125,9 @@ WisLLM/
 ### TODO
 
 - [ ] Update Data Team Roles (Data Scientist, Data Architect, Data Warehousing)
-- [ ] Fix Folder Structure
+- [X] Fix Folder Structure
 - [ ] Add LangGraph Studio integration
-- [ ] Create LangGraph for Supervisor Agent
+- [ ] Create LangGraph for Scrum Agent
 - [ ] Debug Dockerfile and Docker Compose
 
 ## Getting Started
