@@ -15,12 +15,10 @@ except ImportError:
 # client = OpenAI
 
 if "REASONING_LLM" not in os.environ:
-    os.environ["REASONING_LLM"] = getpass.getpass(
-        prompt="Enter your reasoning LLM path (required): (default = "") "
-    )
+    os.environ["REASONING_LLM"] = getpass.getpass(prompt="Enter your reasoning LLM path (required): (default = ) ")
     if not os.environ.get("REASONING_LLM"):
         os.environ["REASONING_LLM"] = "HF1BitLLM/Llama3-8B-1.58-100B"
-        
+
 # if "PREPROCESSING_LLM" not in os.environ:
 #     os.environ["PREPROCESSING_LLM"] = getpass.getpass(
 #         prompt="Enter your preprocessing LLM path (optional): "
@@ -34,7 +32,7 @@ if "REASONING_LLM" not in os.environ:
 #     )
 #     if not os.environ.get("CODING_LLM"):
 #         os.environ["CODING_LLM"] = "nvidia/AceReason-Nemotron-1.1-7B"
-    
+
 reasoning_llm = VLLM(
     model="REASONING_LLM",
     trust_remote_code=True,
@@ -43,8 +41,7 @@ reasoning_llm = VLLM(
         "gpu_memory_utilization": 0.9,
         "quantization": "bitblas",  # Enable BitBLAS quantization
         "max_model_len": 4096,
-    }
-    
+    },
 )
 
 # preprocessing_llm = VLLM(

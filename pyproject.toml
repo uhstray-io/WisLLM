@@ -25,4 +25,10 @@ dependencies = [
     "python-dotenv>=1.1.0",
     "vllm>=0.9.1",
     "langsmith>=0.4.4",
+    "ruff>=0.12.1",
 ]
+
+
+[tool.ruff]
+# Allow lines to be as long as 120.
+line-length = 180

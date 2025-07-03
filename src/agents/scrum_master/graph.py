@@ -1,10 +1,12 @@
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict, List
 
+
 class SharedState(TypedDict):
     messages: List[str]
     shared_data: dict
     agent_states: dict
+
 
 # Compile individual agent as subgraph
 research_graph = StateGraph(SharedState)
