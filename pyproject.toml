@@ -1,40 +1,28 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+
 
 [project]
 name = "wisllm"
 version = "0.0.1"
 description = "LLM Agentic Development Team, designed to support business-as-code platforms, services, and data."
 authors = [
-    {name = "jestyr27", email = "joe.wisneski@uhstray.io"}
-    {name = "JacobHaig", email = "jacob.haig@uhstray.io"}
+    { name = "jestyr27", email = "joe.wisneski@uhstray.io" },
+    { name = "JacobHaig", email = "jacob.haig@uhstray.io" },
 ]
-license = {text = "Apache-2.0"}
+license = { text = "Apache-2.0" }
 readme = "README.md"
+
+# Python related metadata
 requires-python = ">=3.12"
 dependencies = [
-    "langchain>=0.3.25",
-    "langchain-anthropic>=0.3.15",
+    "langchain[anthropic]>=0.3.26",
+    "langchain-anthropic>=0.3.16",
     "langchain-community>=0.3.25",
-    "langchain-tavily>=0.2.4",
+    "langchain-tavily>=0.2.6",
     "langchain-text-splitters>=0.3.8",
     "langgraph>=0.4.8",
     "langgraph-cli[inmem]>=0.3.3",
     "langgraph-supervisor>=0.0.27",
     "python-dotenv>=1.1.0",
     "vllm>=0.9.1",
-    "shared",
-    "supervisor-agent",
-    "research-agent",
+    "langsmith>=0.4.4",
 ]
-
-[tool.hatch.build.targets.wheel]
-packages = ["wisllm"]
-
-[tool.uv.workspace]
-members = ["shared", "agents/*"]
-
-[tool.uv.sources]
-shared = { workspace = true }
-supervisor-agent = { workspace = true }
