@@ -76,6 +76,31 @@ flowchart TD
     Ops --> Int
 ```
 
+### Target Platform LLMs
+
+These LLMs are currently targeted for MVP deployment, and are subject to change based on evolving projects needs, technology advancements, and team feedback.
+
+- **Reasoning & Architecture Agents**: Manages the project, prioritizes tasks, and ensures smooth collaboration between agents.
+  - NVIDIA Nemotron-H family. The 2/4.8/9bn hybrid Mamba-Transformer models achieve instruction following and code-generation accuracy comparable to dense 30bn LLMs of the same generation at an order-of-magnitude fraction of the inference FLOPs.
+  - Microsoft Phi series.
+    -  https://huggingface.co/microsoft/Phi-3.5-mini-instruct - Solutions Architect/Scrum Master
+    - https://huggingface.co/microsoft/Phi-4-mini-reasoning - Data Scientist
+
+- **Code & Data Development Agents**: Develops and maintains the project codebase, ensuring high-quality software development practices.
+  - Falcon-3-10B-1.58bit-Instruct - https://huggingface.co/tiiuae/Falcon3-10B-Instruct-1.58bit
+
+- **Operations Engineering Agents**:
+  - Salesforce xLAM-2-8B. The 8bn model achieves state-of-the-art performance on tool calling despite is relatively modest size, surpassing frontier models like GPT-4o and Claude 3.5.
+
+
+#### Research References
+
+- https://arxiv.org/pdf/2506.02153 - Small Language Models are the Future of Agentic AI
+- https://arxiv.org/pdf/2402.17764 - 
+- https://github.com/microsoft/BitNet/blob/main/gpu/README.md - BitNet GPU Inference
+- https://arxiv.org/abs/2504.12285 - BitNet Technical Report
+- https://llm-stats.com/
+
 ### Folder Structure
 
 ```plaintext
