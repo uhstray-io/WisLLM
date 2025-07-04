@@ -1,6 +1,6 @@
-# WisLLM
+# WisAI
 
-LLM Agentic Development Team, designed to support business-as-code platforms, services, and data.
+Agentic AI Development Team, designed to support business-as-code platforms, services, and data.
 
 ### MVP Goals
 
@@ -22,7 +22,7 @@ LLM Agentic Development Team, designed to support business-as-code platforms, se
 - **Complexity**: LLM Context use-cases and windows should be minimized to reduce complexity and improve performance.
 - **Modular**: The system should be modular, allowing for easy integration or swapping of new agents and services.
 
-### WisLLM Design Architecture
+### WisAI Design Architecture
 
 ```mermaid
 flowchart TD
@@ -76,7 +76,7 @@ flowchart TD
     Ops --> Int
 ```
 
-### Target Platform LLMs
+### Target Platform Models
 
 These LLMs are currently targeted for MVP deployment, and are subject to change based on evolving projects needs, technology advancements, and team feedback.
 
