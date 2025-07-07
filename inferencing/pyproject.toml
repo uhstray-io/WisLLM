@@ -1,15 +1,16 @@
 
 
 [project]
-name = "wisllm"
+name = "wisai_inferencing"
 version = "0.0.1"
 description = "LLM Agentic Development Team, designed to support business-as-code platforms, services, and data."
+license = { text = "Apache-2.0" }
+readme = "README.md"
 authors = [
     { name = "jestyr27", email = "joe.wisneski@uhstray.io" },
     { name = "JacobHaig", email = "jacob.haig@uhstray.io" },
 ]
-license = { text = "Apache-2.0" }
-readme = "README.md"
+
 
 # Python related metadata
 requires-python = ">=3.12"
